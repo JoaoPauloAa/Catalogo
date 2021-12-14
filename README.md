@@ -15,3 +15,4 @@ Ao clicar em um item vai ser disposto com algumas informações cruciais sobre o
 
 Logo ao lado há um menu com algumas opções ao dispor do cliente
 
+![screenshot2](https://user-images.githubusercontent.com/82532125/146082145-6272dace-fd2b-49ff-a6c5-463e198e4731.jpg)
