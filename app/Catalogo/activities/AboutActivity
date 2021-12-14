@@ -1,4 +1,4 @@
-package catalogue.contentful.activities;
+package catalogo.activities;
 
 import android.Intent;
 import android.net.Uri;
