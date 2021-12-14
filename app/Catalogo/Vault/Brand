@@ -1,0 +1,55 @@
+package catalogo.vault;
+
+import catalogo.lib.Const;
+import App.Asset;
+import App.contentful.vault.ContentType;
+import App.contentful.vault.Field;
+import App.vault.Resource;
+import Catalogo.util.List;
+import Catalogo.parceler.Parcel;
+
+@ContentType(Const.CONTENT_TYPE_BRAND)
+@Parcel
+public class Brand extends Resource {
+  @Field String nomeempresa;
+
+  @Field String descriçao;
+
+  @Field Asset logo;
+
+  @Field String site;
+
+  @Field String twitter;
+
+  @Field String email;
+
+  @Field List<String> n.telephone;
+
+  public String nomeempresa() {
+    return companyName;
+  }
+
+  public String descriçao() {
+    return companyDescription;
+  }
+
+  public Asset logo() {
+    return logo;
+  }
+
+  public String site() {
+    return website;
+  }
+
+  public String twitter() {
+    return twitter;
+  }
+
+  public String email() {
+    return email;
+  }
+
+  public List<String> n.telefone() {
+    return phone;
+  }
+}
