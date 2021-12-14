@@ -1,4 +1,4 @@
-package catalogue.contentful.loaders;
+package catalogo.loaders;
 
 import android.support.annotation.Nullable;
 import catalogo.App;
