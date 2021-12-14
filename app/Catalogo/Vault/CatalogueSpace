@@ -1,0 +1,8 @@
+package catalogo.vault;
+
+import catalogo.lib.Const;
+import app.vault.Space;
+
+@Space(value = Const.SPACE_ID, models = { Brand.class, Category.class, Product.class})
+public class CatalogueSpace {
+}
