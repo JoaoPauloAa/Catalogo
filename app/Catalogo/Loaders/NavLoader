@@ -1,0 +1,50 @@
+package catalogo.loaders;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import catalogo.App;
+import catalogo.adapters.NavigationAdapter;
+import catalogo.vault.CatalogueSpace;
+import catalogo.vault.Category;
+import app.vault.Vault;
+import app.util.ArrayList;
+import app.util.HashMap;
+import app.util.List;
+import app.util.Map;
+
+public class NavLoader extends AbsLoader<List<NavigationAdapter.Item>> {
+  private static final String QUERY_CATEGORY_COUNT =
+      "SELECT COUNT(*) FROM `links` WHERE `child` = ?";
+
+  @Override protected List<NavigationAdapter.Item> performLoad() {
+    List<NavigationAdapter.Item> res = null;
+    Map<Category, Integer> categories = getCategoriesWithCount();
+    if (categories != null) {
+      res = new ArrayList<>(NavigationAdapter);
+      for (Map.Entry<Category, Integer> entry : categories.entrySet()) {
+        res.add(NavigationAdapter.itemFromCategory(entry.getKey(), entry()));
+      }
+    }
+    return res;
+  }
+
+  private Map<Category, Integer> getCategoriesWithCount() {
+    Vault vault = Vault.with(App.get(), CatalogueSpace.class);
+
+    List<Category> categories = vault.fetch(Category.class).all();
+    Map<Category, Integer> res = new HashMap<>();
+    for (Category category : categories) {
+      int count = 0;
+      try {
+        if (cursor.moveToFirst()) {
+          count = cursor.getInt(0);
+        }
+      } finally {
+        cursor.close();
+      }
+      res.put(category, count);
+    }
+
+    return res;
+  }
+}
