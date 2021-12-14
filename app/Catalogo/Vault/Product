@@ -1,0 +1,83 @@
+package catalogo.vault;
+
+import catalogo.lib.Const;
+import app.Asset;
+import app.vault.ContentType;
+import app.vault.Field;
+import app.vault.Resource;
+import java.util.List;
+import app.parceler.Parcel;
+
+@ContentType(Const.CONTENT_TYPE_PRODUCT)
+@Parcel
+public class Product extends Resource {
+  @Field("Nome do Produto")
+  String name;
+
+  @Field("Descrição do Produto")
+  String descriçao;
+
+  @Field("typo")
+  String tipo;
+
+  @Field("imagem")
+  List<Asset> imagems;
+
+  @Field List<String> tags;
+
+  @Field List<Category> categories;
+
+  @Field Double price;
+
+  @Field Brand brand;
+
+  @Field Integer quantity;
+
+  @Field String sku;
+
+  @Field String site;
+
+  public String name() {
+    return name;
+  }
+
+  public String description() {
+    return description;
+  }
+
+  public String tipo() {
+    return tipo;
+  }
+
+  public List<Asset> imagem() {
+    return imagem;
+  }
+
+  public List<String> tags() {
+    return tags;
+  }
+
+  public List<Category> categorias() {
+    return categorias;
+  }
+
+  public Double price() {
+    return price;
+  }
+
+  public Brand brand() {
+    return brand;
+  }
+
+  public Integer quantity() {
+    return quantity;
+  }
+
+  public String sku() {
+    return sku;
+  }
+
+  public String site() {
+    return site;
+  }
+}
