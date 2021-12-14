@@ -1,6 +1,6 @@
 Catalogo de Loja de doces
 
-Com opções customizaveis e geolocalização (em teste)
+Com opções customizaveis e geolocalização implementada (em teste)
 
 E Um sistema de banco de dados a ser implementado em breve
 
