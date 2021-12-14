@@ -1,0 +1,30 @@
+package catalogo.vault;
+
+import catalogo.lib.Const;
+import app.vault.Asset;
+import app.contentful.vault.ContentType;
+import app.contentful.vault.Field;
+import app.contentful.vault.Resource;
+import app.parceler.Parcel;
+
+@ContentType(Const.CONTENT_TYPE_CATEGORY)
+@Parcel
+public class Category extends Resource {
+  @Field String title;
+
+  @Field Asset icon;
+
+  @Field String categoryDescription;
+
+  public String title() {
+    return title;
+  }
+
+  public Asset icon() {
+    return icon;
+  }
+
+  public String categoryDescription() {
+    return categoryDescription;
+  }
+}
